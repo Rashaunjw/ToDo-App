@@ -18,6 +18,7 @@ target 'ToDoApp' do
 
   if ENV['EXPO_USE_COMMUNITY_AUTOLINKING'] == '1'
     config_command = ['node', '-e', "process.argv=['', '', 'config'];require('@react-native-community/cli').run()"];
+    config = JSON.parse(`#{config_command.shelljoin}`)
   else
     config_command = [
       'npx',
@@ -27,9 +28,8 @@ target 'ToDoApp' do
       '--platform',
       'ios'
     ]
+    config = JSON.parse(`#{config_command.shelljoin}`)
   end
-
-  use_expo_modules!
 
   use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
   use_frameworks! :linkage => ENV['USE_FRAMEWORKS'].to_sym if ENV['USE_FRAMEWORKS']
