@@ -16,26 +16,31 @@ prepare_react_native_project!
 target 'ToDoApp' do
   use_expo_modules!
 
-  if ENV['EXPO_USE_COMMUNITY_AUTOLINKING'] == '1'
-    config_command = ['node', '-e', "process.argv=['', '', 'config'];require('@react-native-community/cli').run()"];
-    config = JSON.parse(`#{config_command.shelljoin}`)
-  else
-    config_command = [
-      'npx',
-      'expo-modules-autolinking',
-      'react-native-config',
-      '--json',
-      '--platform',
-      'ios'
-    ]
-    config = JSON.parse(`#{config_command.shelljoin}`)
+  begin
+    if ENV['EXPO_USE_COMMUNITY_AUTOLINKING'] == '1'
+      config_command = ['node', '-e', "process.argv=['', '', 'config'];require('@react-native-community/cli').run()"];
+      config = JSON.parse(`#{config_command.shelljoin}`)
+    else
+      config_command = [
+        'npx',
+        'expo-modules-autolinking',
+        'react-native-config',
+        '--json',
+        '--platform',
+        'ios'
+      ]
+      config = JSON.parse(`#{config_command.shelljoin}`)
+    end
+  rescue => e
+    puts "Autolinking failed: #{e.message}"
+    config = { reactNativePath: "../node_modules/react-native" }
   end
 
   use_frameworks! :linkage => podfile_properties['ios.useFrameworks'].to_sym if podfile_properties['ios.useFrameworks']
   use_frameworks! :linkage => ENV['USE_FRAMEWORKS'].to_sym if ENV['USE_FRAMEWORKS']
 
   use_react_native!(
-    :path => config[:reactNativePath],
+    :path => config[:reactNativePath] || "../node_modules/react-native",
     :hermes_enabled => podfile_properties['expo.jsEngine'] == nil || podfile_properties['expo.jsEngine'] == 'hermes',
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/..",
