@@ -16,8 +16,12 @@ export default StyleSheet.create({
         flex: 1,
     },
     addbutton: {
-        top: 700,
-        left: 334,
+      position: 'absolute',
+      bottom: 30,
+      right: 30,
+      width: 60,
+      height: 60,
+      zIndex: 999, 
     },
     firstSection1: {
         top: 125,
@@ -27,6 +31,37 @@ export default StyleSheet.create({
         color: '#FFF',
         zIndex: 10, 
         fontFamily: 'Nexa',
+        marginBottom: 150,
+
+    },
+    firstSection2: {
+
+        fontSize: 20,
+        fontWeight: "500",
+        color: '#FFF',
+        zIndex: 10, 
+        fontFamily: 'Nexa',
+        lineHeight: 26, 
+        flexWrap: 'wrap',
+
+    },
+    firstSection3: {
+      flexWrap: 'wrap',
+
+        fontSize: 17,
+        fontWeight: "200",
+        color: '#FFF',
+        zIndex: 10, 
+        fontFamily: 'Nexa',
+    },
+    checkicon: {
+      position: 'absolute',
+        strokeWidth: 2,
+        strokeLinecap: 'round',
+    },
+    closex: {
+      strokeWidth: 2.5,
+      strokeLinecap: 'round',
     },
     iphone1415ProMax1Inner: {
         top: 0,
@@ -40,25 +75,65 @@ export default StyleSheet.create({
         zIndex: 1,
         position: "absolute",
       },
+      smallbox: {
+      },
+      smallbox2: {
+        position:'absolute',
+      },
       tasktangle1: {
-        top: 150,
-        left: 15,
         strokeWidth: 3,
       },
       tasktangle2: {
-        top: 200,
-        left: 15,
         strokeWidth: 3,
       },
-      tasktangle3: {
-        top: 250,
-        left: 15,
-        strokeWidth: 3,
-      },
-      tasktangle4: {
-        top: 300,
-        left: 15,
-        strokeWidth: 3,
-      }
+      deletebox: {
+        top: 40,
+        alignSelf: 'center',
+    },
+    deletetext1: {
+        fontSize: 30,
+        fontFamily: 'Nexa',
+        fontWeight: "600",
+        alignSelf: 'center',
+        zIndex: 21, 
+        top: -240,
+        color: 'white',
+    },
+    deletetext2: {
+        alignSelf: 'center',
+        fontSize: 23,
+        fontFamily: 'Nexa',
+        fontWeight: "600",
+        bottom: 470,
+        zIndex: 21, 
+        position: 'absolute',
+        color: 'white',
+    },
+    deletetext3: {
+        alignSelf: 'center',
+        fontSize: 23,
+        fontFamily: 'Nexa',
+        fontWeight: "600",
+        zIndex: 21, 
+        top: -140,
+        color: 'white',
+    },
+    deletetext4: {
+        fontSize: 23,
+        fontFamily: 'Nexa',
+        fontWeight: "600",
+        top: -60,
+        right: 100,
+        zIndex: 21, 
+        color: 'white',
+    },
+    deletetext5: {
+        fontSize: 23,
+        fontFamily: 'Nexa',
+        fontWeight: "600",
+        top: -83,
+        left: 100,
+        color: 'white',
+    },
       
 });

@@ -16,57 +16,60 @@ export default StyleSheet.create({
         flex: 1,
     },
     addbutton: {
-        top: 680,
-        left: 334,
+        alignSelf: 'flex-end',
+        top: 670,
+        right: 40,
     },
+
+
+
     arrow: {
-        top: 450,
+        top: 440,
         left: 200,
 
     },
     shortline1: {
         left: 160,
-        top: -140,
+        top: -157,
     },
     shortline2: {
         left: 160,
-        top: -75,
+        top: -85,
 
     },
     shortline3: {
         left: 160,
-        top: 0,
+        top: -10,
 
     },
     longline1: {
-        top: -40,
+        top: -58,
         left: 160,
     },
     longline2: {
-        top: 25,
+        top: 15,
         left: 160,
     },
     longline3: {
-        top: 100,
+        top: 88,
         left: 160,
     },
     bigbox: {
         position: 'absolute',
         left: 35,
-        top: 350,
+        top: 338,
     },
     smallbox1: {
-        top: -60,
+        top: -78,
         left: 80,
     },
     smallbox2: {
-        top: -20,
+        top: -35,
         left: 80,
 
     },
     smallbox3: {
-        top: 20,
-
+        top: 8,
         left: 80,
     },
     firstSection1: {
@@ -88,7 +91,7 @@ export default StyleSheet.create({
         fontFamily: 'Nexa',
     },
     firstSection3: {
-        top: 483,
+        top: 473,
         textAlign: 'center',
         fontSize: 25,
         fontWeight: "500",
