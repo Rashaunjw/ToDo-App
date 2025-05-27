@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import HomeScreen1 from '../src/screens/HomeScreen1';
 import HomeScreen2 from '../src/screens/HomeScreen2';
-import NewTask from '../src/screens/newTask';
+import NewTask from '../src/screens/NewTask';
 import EditTask from '../src/screens/editTask';
 
 const Stack = createNativeStackNavigator();
