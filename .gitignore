@@ -3,3 +3,7 @@ node_modules
 .DS_Store
 ios/Pods/
 ios/build
+# Expo
+.expo
+dist/
+web-build/
