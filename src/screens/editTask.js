@@ -75,13 +75,12 @@ export default function EditTask() {
             : null,
         };
     
-        const existingTasks = await AsyncStorage.getItem('TASKS');
+        const existingTasks = await AsyncStorage.getItem('tasks');
         const tasks = existingTasks ? JSON.parse(existingTasks) : [];
     
-        // 🔄 Replace task at the same index
         if (index != null && tasks[index]) {
           tasks[index] = updatedTask;
-          await AsyncStorage.setItem('TASKS', JSON.stringify(tasks));
+          await AsyncStorage.setItem('tasks', JSON.stringify(tasks));
           navigation.navigate('HomeScreen2');
         } else {
           console.error('Invalid task index');
@@ -96,7 +95,6 @@ export default function EditTask() {
       if (task) {
         setTaskTitle(task.title || '');
     
-        // Convert MM/DD format to Date
         if (task.date) {
           const [month, day] = task.date.split('/').map(Number);
           const dateObj = new Date();
@@ -105,7 +103,6 @@ export default function EditTask() {
           setDueDate(dateObj);
         }
     
-        // Parse and set time
         if (task.time) {
           const parsedTime = parseTimeString(task.time);
           if (parsedTime instanceof Date && !isNaN(parsedTime)) {
@@ -123,7 +120,7 @@ export default function EditTask() {
 
   const handleSave = async () => {
     try {
-      const savedTasks = await AsyncStorage.getItem('TASKS');
+      const savedTasks = await AsyncStorage.getItem('tasks');
       let tasks = JSON.parse(savedTasks) || [];
 
       // Replace the task at the original index
@@ -134,7 +131,7 @@ export default function EditTask() {
         time,
       };
 
-      await AsyncStorage.setItem('TASKS', JSON.stringify(tasks));
+      await AsyncStorage.setItem('tasks', JSON.stringify(tasks));
       navigation.goBack(); // Return to HomeScreen2
     } catch (e) {
       console.error('Failed to update task:', e);

@@ -38,24 +38,27 @@ export default function NewTask() {
   const saveTask = async () => {
     try {
       const task = {
+        id: Date.now().toString(), 
         title: taskTitle,
         date: dueDate
         ? dueDate.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' })
         : null,
-              time: timeSensitive
+        time: timeSensitive
           ? timeSensitive.toLocaleTimeString([], {
               hour: '2-digit',
               minute: '2-digit',
               hour12: true,
             })
           : null,
+        checked: false
       };
+      
   
-      const existingTasks = await AsyncStorage.getItem('TASKS');
+      const existingTasks = await AsyncStorage.getItem('tasks');
       const tasks = existingTasks ? JSON.parse(existingTasks) : [];
   
       tasks.push(task);
-      await AsyncStorage.setItem('TASKS', JSON.stringify(tasks));
+      await AsyncStorage.setItem('tasks', JSON.stringify(tasks));
   
       navigation.navigate('HomeScreen2');
     } catch (e) {

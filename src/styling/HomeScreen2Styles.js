@@ -41,7 +41,7 @@ export default StyleSheet.create({
         color: '#FFF',
         zIndex: 10, 
         fontFamily: 'Nexa',
-        lineHeight: 26, 
+        lineHeight: 23, 
         flexWrap: 'wrap',
 
     },
