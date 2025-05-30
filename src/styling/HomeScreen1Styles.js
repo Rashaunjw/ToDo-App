@@ -9,7 +9,6 @@ export default StyleSheet.create({
         color: '#FFF',
         zIndex: 10, 
         fontFamily: 'Nexa',
-
     },
     tasksWrapper: {
         backgroundColor: '#81B622',
@@ -20,13 +19,9 @@ export default StyleSheet.create({
         top: 670,
         right: 40,
     },
-
-
-
     arrow: {
         top: 440,
         left: 200,
-
     },
     shortline1: {
         left: 160,
@@ -35,12 +30,10 @@ export default StyleSheet.create({
     shortline2: {
         left: 160,
         top: -85,
-
     },
     shortline3: {
         left: 160,
         top: -10,
-
     },
     longline1: {
         top: -58,
@@ -66,7 +59,6 @@ export default StyleSheet.create({
     smallbox2: {
         top: -35,
         left: 80,
-
     },
     smallbox3: {
         top: 8,
@@ -115,5 +107,5 @@ export default StyleSheet.create({
         height: 150,
         zIndex: 1,
         position: "absolute",
-      },
+    },
 });

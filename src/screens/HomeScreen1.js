@@ -1,21 +1,20 @@
-// where the currents tasks WOULD be available but if no tasks are saved then a "Add New Task" message is displayed
+// where currents tasks WOULD be available but if no tasks are saved then a "Add New Task" message is displayed
 
-import React, {useState} from 'react';
+// prints out title and empty task box with the add button navigating to the NewTask page
+
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { KeyboardAvoidingView, Text, View, TextInput, Platform, TouchableOpacity } from 'react-native';
+import { Text, View } from 'react-native';
 import styles from '../styling/HomeScreen1Styles';
-import AddButton from '../components/Add-button'; // adjust path if needed
+import AddButton from '../components/Add-button'; 
 import Arrow from '../components/Arrow';
 import BigBox from '../components/BigBox';
 import LongLine from '../components/LongLine';
 import SmallBox from '../components/SmallBox';
 import ShortLine from '../components/ShortLine';
-import DeleteBox from '../components/DeleteBox';
 
 export default function HomeScreen1() {
     const navigation = useNavigation();
-
     const handleAddButtonPress = () => {
       navigation.navigate('NewTask'); 
     };
@@ -42,13 +41,3 @@ export default function HomeScreen1() {
     </SafeAreaView>
     )
 }
-
-<View style={{alignContent: 'center'}}>        
-<DeleteBox style={styles.deletebox}/>
-<Text style={styles.deletetext1}>Delete</Text>
-<Text style={styles.deletetext2}>Are you sure you want to</Text>
-<Text style={styles.deletetext3}>delete your task?</Text>
-<Text style={styles.deletetext4}>Cancel</Text>
-<Text style={styles.deletetext5}>Confirm</Text>
-</View>
-

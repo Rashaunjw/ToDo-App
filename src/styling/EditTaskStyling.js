@@ -21,8 +21,8 @@ export default StyleSheet.create({
         height: 150,
         zIndex: 1,
         position: "absolute",
-      },
-      tasksWrapper: {
+    },
+    tasksWrapper: {
         backgroundColor: '#81B622',
         flex: 1,
     },
@@ -126,17 +126,14 @@ export default StyleSheet.create({
         top: 355,
         width: 380, 
     },
-    
     dateText1: {
         fontSize: 16,
         color: '#3D550C',
     },
-
     dateText2: {
         fontSize: 16,
         color: '#3D550C',
     },
-    
     pickerContainer: {
         backgroundColor: 'white',
         borderRadius: 20,
