@@ -10,6 +10,6 @@ Instructions to run:
     cd..
     npx react-native start
 
-new terminal:
-
-npx react-native run-ios --simulator="iPhone 16"
+    new terminal:
+    
+    npx react-native run-ios --simulator="iPhone 16"
