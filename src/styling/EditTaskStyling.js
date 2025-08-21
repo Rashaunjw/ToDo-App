@@ -17,7 +17,7 @@ export default StyleSheet.create({
         borderStyle: "solid",
         borderColor: "#ecf87f",
         borderBottomWidth: 4,
-        width: 430,
+        width: 440,
         height: 150,
         zIndex: 1,
         position: "absolute",
