@@ -12,4 +12,4 @@ Instructions to run:
 
     new terminal:
     
-    npx react-native run-ios --simulator="iPhone 16"
+    npx react-native run-ios --simulator="iPhone 16 Pro Max"
